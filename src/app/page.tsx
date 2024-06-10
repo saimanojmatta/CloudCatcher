@@ -1,18 +1,20 @@
 'use client'
-
 import TimeLocation from "@/components/TimeLocation"
 import WeatherStats from "@/components/WeatherStats"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
 
+
 type Props = {}
 const page = (props: Props) => {
   const[data,setData]=useState({})
   const[city,setCity]=useState('')
   const[error,setError]=useState('')
-  const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
 
+  const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
+ 
+  
   const handleSubmit=async(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
     try{
@@ -23,7 +25,6 @@ const page = (props: Props) => {
       const data=await response.json()
       console.log(data)
       setData(data)
-      // setCity('')r
       setError('')
     }catch(err){
       setError("City not found!")
@@ -33,8 +34,9 @@ const page = (props: Props) => {
    
  
   return (
+    <>
     <div className="p-28">
-      {/* form submission */}
+      {/*  input form submission */}
       <form onSubmit={handleSubmit} className="flex items-center justify-center gap-4">
       <Input type="text"placeholder="enter city name or zip code" onChange={(e:React.ChangeEvent<HTMLInputElement>)=>setCity(e.target.value)} />
       <Button type="submit">Search</Button>
@@ -48,7 +50,7 @@ const page = (props: Props) => {
       :error !==""?
       <div className="text-center h-screen mt-[5rem]">
         <h2 className="text-3xl font-semibold mb-4">
-          <span className="text-primary">"City"</span> not found</h2>
+          <span className="text-primary">City</span> not found</h2>
         <p className="text-xl">Please enter valid city name or zip code</p>
       </div>
       :<>
@@ -58,6 +60,7 @@ const page = (props: Props) => {
         </div>
       </>}
     </div>
+    </>
   )
 }
 export default page

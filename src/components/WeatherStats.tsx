@@ -1,6 +1,7 @@
-import { ArrowBigDown, ArrowBigUp, DropletIcon, Sunrise, Sunset, Thermometer, Wind } from "lucide-react"
+import {  DropletIcon,  Thermometer, Wind } from "lucide-react"
 import Image from "next/image"
 import {DateTime} from 'luxon'
+import { NeonGradientCard } from "./ui/neon-gradient-card"
 
 type Props = {}
 const WeatherStats = ({data}:any) => {
@@ -12,10 +13,12 @@ const WeatherStats = ({data}:any) => {
 
   return (
     <>
-    <p className="text-primary text-[2rem] mt-4">{data.weather[0].main}</p>
-    <div className="w-[40rem]  flex flex-wrap  items-center justify-around text-xl mt-12   ">
+    <div className="w-[40rem]  flex flex-wrap  items-center justify-around text-xl mt-12 md:flex-row flex-col gap-6  ">
       <Image src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="" width={100} height={100} />
-      <p className="font-bold text-primary text-[3rem]">{data.main.temp.toFixed(0)}℉</p>
+      <div className="flex flex-col">
+        <p className="font-bold text-primary text-[3rem]">{data.main.temp.toFixed(0)}℃</p>
+        <p className="text-primary text-[2rem] mt-4">{data.weather[0].main}</p>
+      </div>
 
       <div className="flex flex-col items-center gap-2   ">
         <div className="flex  ">
@@ -31,28 +34,49 @@ const WeatherStats = ({data}:any) => {
          <p>Wind : {data.wind.speed.toFixed()}km/h</p>
         </div>
       </div>
-      </div>
-      {/* sunrise sunset high&low */}
-      <div  className="w-[50rem]  flex items-center justify-around text-xl mt-16 gap-4 ">
-        <div className="flex ">
-          <Sunrise/>
-            <p>Sunrise : {sunrise}</p>
-        </div>
-        <div className="flex">
-          <Sunset/>
-          <p>Sunset : {sunset}</p>
-        </div>
-        <div className="flex">
-          <ArrowBigUp/>
-          <p>High : {data.main.temp_max.toFixed()}°</p>
-        </div>
-        <div className="flex">
-          <ArrowBigDown/>
-          <p>Low:{data.main.temp_min.toFixed()}°</p>
-        </div>
-      
-
     </div>
+      {/* Neon gradient :sunrise sunset high&low */}
+     <div className="flex md:flex-row flex-col items-center gap-8 mt-12">
+      <NeonGradientCard className="max-w-sm items-center justify-center text-center">
+      <div className="flex gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
+            <Image src={'/sunrise.png'} alt="cloudy" width={50} height={50}/>
+          <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          Sunrise {sunrise}
+      </span>
+         
+      </div>
+     </NeonGradientCard>
+
+     <NeonGradientCard className="max-w-sm items-center justify-center text-center">
+      <div className="flex gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
+            <Image src={'/sunset.png'} alt="cloudy" width={50} height={50}/>
+          <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          Sunset {sunset}
+      </span>
+         
+      </div>
+     </NeonGradientCard>
+
+     <NeonGradientCard className="max-w-sm items-center justify-center text-center">
+      <div className="flex gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
+            <Image src={'/high-temperature.png'} alt="cloudy" width={50} height={50}/>
+          <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          High Temp {data.main.temp_max.toFixed()}°
+      </span>
+         
+      </div>
+     </NeonGradientCard>
+
+     <NeonGradientCard className="max-w-sm items-center justify-center text-center">
+      <div className="flex gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
+            <Image src={'/low-temperature.png'} alt="cloudy" width={50} height={50}/>
+          <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+         Low Temp {data.main.temp_min.toFixed()}°
+      </span>
+      </div>
+     </NeonGradientCard>
+     </div>
+
     </>
   )
 }

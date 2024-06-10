@@ -9,9 +9,8 @@ const TimeLocation = ({data}:any) => {
     <>
     <div className='flex items-center justify-center mt-12 text-xl font-bold flex-col gap-8  '>
       {formatLocalTime}
-      <p className='font-medium max-sm:text-sm '>{data.name}, {data.sys.country}</p>
+      <p className='font-medium text-4xl text-primary '>{data.name}, {data.sys.country}</p>
     </div>
-     
     </>
   )
 }
