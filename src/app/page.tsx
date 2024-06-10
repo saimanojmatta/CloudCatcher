@@ -7,7 +7,7 @@ import { useState } from "react"
 
 
 type Props = {}
-const page = (props: Props) => {
+const Page = (props: Props) => {
   const[data,setData]=useState({})
   const[city,setCity]=useState('')
   const[error,setError]=useState('')
@@ -63,4 +63,4 @@ const page = (props: Props) => {
     </>
   )
 }
-export default page
+export default Page
