@@ -36,11 +36,11 @@ const WeatherStats = ({data}:any) => {
       </div>
     </div>
       {/* Neon gradient :sunrise sunset high&low */}
-     <div className="flex md:flex-row flex-col items-center gap-8 mt-12">
+     <div className="flex  md:flex-row flex-col items-center gap-8 mt-12">
       <NeonGradientCard className="max-w-sm items-center justify-center text-center">
-      <div className="flex gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
+      <div className="flex  gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
             <Image src={'/sunrise.png'} alt="cloudy" width={50} height={50}/>
-          <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          <span className="pr-8  pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center md:text-4xl text-2xl font-bold md:leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
           Sunrise {sunrise}
       </span>
          
@@ -50,7 +50,7 @@ const WeatherStats = ({data}:any) => {
      <NeonGradientCard className="max-w-sm items-center justify-center text-center">
       <div className="flex gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
             <Image src={'/sunset.png'} alt="cloudy" width={50} height={50}/>
-          <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          <span className=" pr-8 pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center md:text-4xl text-2xl font-bold md:leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
           Sunset {sunset}
       </span>
          
@@ -60,7 +60,7 @@ const WeatherStats = ({data}:any) => {
      <NeonGradientCard className="max-w-sm items-center justify-center text-center">
       <div className="flex gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
             <Image src={'/high-temperature.png'} alt="cloudy" width={50} height={50}/>
-          <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          <span className=" pr-8 pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center md:text-4xl text-2xl font-bold md:leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
           High Temp {data.main.temp_max.toFixed()}°
       </span>
          
@@ -70,7 +70,7 @@ const WeatherStats = ({data}:any) => {
      <NeonGradientCard className="max-w-sm items-center justify-center text-center">
       <div className="flex gap-1 pointer-events-none z-10 h-full whitespace-pre-wrap font-bold ">
             <Image src={'/low-temperature.png'} alt="cloudy" width={50} height={50}/>
-          <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-4xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+          <span className=" pr-8 pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center md:text-4xl text-2xl font-bold md:leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
          Low Temp {data.main.temp_min.toFixed()}°
       </span>
       </div>
