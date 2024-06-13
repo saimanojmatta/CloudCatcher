@@ -107,7 +107,7 @@ const Page = (props: Props) => {
     <div className="p-20">
       <div className="flex items-center justify-center gap-2 sm:gap-12   m-8  ">
         {CITIES.map((city)=>(
-          <ShineBorder className="text-center text-lg font-bold capitalize  " color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} >
+          <ShineBorder key={city} className="text-center text-lg font-bold capitalize  " color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} >
             <button  onClick={()=>{
               handleMultipleLocations(city)
             }}>
