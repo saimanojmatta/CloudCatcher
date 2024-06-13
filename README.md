@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Description:
 
-## Getting Started
+This repository contains a fully responsive weather application that retrieves current weather data and forecasts based on user input.  Users can enter either a city name or pincode to see details like temperature, humidity, wind, sunrise/sunset times, highs and lows, current date, and local time. The application leverages a weather API (openweathermap.org) and is built with HTML, CSS, and javascript.
 
-First, run the development server:
+Technologies Used:
 
-```bash
+Nextjs: We utilize Nextjs for building a dynamic and interactive user interface, allowing for efficient data rendering and seamless updates.
+
+Tailwind CSS: We use Tailwind CSS for styling the app, leveraging its utility-first approach to quickly create sleek and modern designs.
+
+OpenWeatherMap API: We leverage the OpenWeatherMap API to fetch weather data, including current conditions and forecasts, ensuring reliable and accurate weather information. Temperature unit conversion is handled through the API by specifying the appropriate "units" parameter value ("metric" for Celsius and "imperial" for Fahrenheit), streamlining the implementation process.
+
+Magic UI libarary: allows to design beautiful ui component using framemotion and styling with tailwindcss 
+
+Prerequisites:
+
+Node.js
+
+npm or yarn
+
+Installation:
+
+Clone the repository:
+
+git clone : https://github.com/saimanojmatta/CloudCatcher
+
+Navigate to the project directory:
+
+cd CloudCatcher 
+
+
+Install dependencies:
+
+npm install
+
+or 
+
+if you are using yarn:
+
+yarn install
+
+
+Running the Application:
+
+Provide specific instructions to run the application locally:
+
+Start the development server:
+
 npm run dev
-# or
+
+or if you are using yarn:
+
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and navigate to:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+http://localhost:3000
